@@ -1,0 +1,16 @@
+<h2>Create a new heroine</h2>
+
+<%= flash[:messages] %>
+<%= form_for @heroine do |f| %>
+    <%= f.label "Name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label "Super Name" %>
+    <%= f.text_field :super_name %>
+
+    <%= f.label "Power" %>
+    <%= f.collection_select :power_ids, Power.all, :id, :name %>
+
+    <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,16 @@
+<h2>Edit Powers</h2>
+
+<%= flash[:messages] %>
+<%= form_for @power do |f| %>
+    <%= f.label "Name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label "Description" %>
+    <%= f.text_field :description %>
+
+    <%= f.label "Select Heroines" %>
+    <%= f.collection_check_boxes :heroine_ids, Heroine.all, :id, :name %>
+
+    <%= f.submit %>
+
+<% end %>
