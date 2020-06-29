@@ -1,0 +1,15 @@
+# Each Heroine show page should include the:
+
+# - name (eg. Kamala Khan)
+# - super name (eg. Ms. Marvel)
+
+<h1> Heroine Show Page </h1> 
+<% @heroines.each do |heroine| %>
+    # <li>
+      <%= heroine.name %>
+    # </li>
+    <br>
+    <%= heroine.super_name %>
+  <% end %>
+</ul>
+ 

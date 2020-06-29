@@ -1,0 +1,20 @@
+
+<h2>Create</h2>
+<% = flash[:message] %> 
+<%= form_for @student do |f| % > 
+	<% f.text_field :name %> (option shift down to replicate) 
+	<% f.text_field :super_name %>
+	<% =  f.collection_submit :power %>
+	<%= f.submit %>
+<% end %> 
+
+redirect_to heroines_path(heroine) 
+
+# Show a form to create a new Heroine. It should have:
+
+# - an input for name
+# - an input for super name
+# - a select dropdown to choose a power
+# - a submit button to create the Heroine
+
+# After successfully creating a Heroine, the user should be redirected to the new Heroine's show page.
