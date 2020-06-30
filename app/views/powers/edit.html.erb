@@ -4,9 +4,6 @@
 <%= form_for @power do |p| %>
     Name: <%= p.text_field :name %><br><br>
     Description: <%= p.text_field :description %><br><br>
-    Heroines: <% Heroine.all.each do |h| %><br><br>
-        <%= "#{h.name}" %>
-        <%= check_box_tag 'choice[heroine_ids][]', checked("#{heroine.name}") heroine.id %><br>
-    <% end %>
+    Heroines: <%= p.collection_check_boxes :heroine_ids, Heroine.all, :id, :name %>
     <%= p.submit %>
 <% end %>
