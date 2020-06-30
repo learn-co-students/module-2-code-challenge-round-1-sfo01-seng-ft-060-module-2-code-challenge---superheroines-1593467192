@@ -1,0 +1,13 @@
+<h1>Update a Power!</h1>
+<%= form_for @power do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :description %><br>
+    <%= f.text_area :description %><br>
+
+    <%= f.fields_for :heroine_powers do |hp| %>
+    <%= hp.collection_check_boxes :heroine_id, Heroine.all, :id, :super_name %><br>
+    <% end %>
+<%= f. submit %>
+<% end %>
