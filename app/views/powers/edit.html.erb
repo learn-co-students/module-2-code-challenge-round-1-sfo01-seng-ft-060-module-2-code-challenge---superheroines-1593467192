@@ -1,0 +1,12 @@
+<h2>Update a Power</h2>
+
+<%= flash[:message] %>
+<%= form_for @power do |p| %>
+    Name: <%= p.text_field :name %><br><br>
+    Description: <%= p.text_field :description %><br><br>
+    Heroines: <% Heroine.all.each do |h| %><br><br>
+        <%= "#{h.name}" %>
+        <%= check_box_tag 'choice[heroine_ids][]', checked("#{heroine.name}") heroine.id %><br>
+    <% end %>
+    <%= p.submit %>
+<% end %>

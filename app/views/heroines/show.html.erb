@@ -1,0 +1,7 @@
+<h3><%= "#{@heroine.name}" %><br>
+<%= "a.k.a #{@heroine.super_name}" %></h3>
+
+<h3><%= "#{@heroine.name}'s Powers:" %><br>
+<% @heroine.powers.uniq.each do |p| %>
+    <%=link_to p.name, power_path(p) %>
+<% end %>

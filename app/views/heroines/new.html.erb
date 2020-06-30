@@ -1,0 +1,9 @@
+<h2>Create a Heroine</h2>
+
+<%= flash[:message] %>
+<%= form_for @heroine do |h| %>
+    Name: <%= h.text_field :name %><br><br>
+    Super Name: <%= h.text_field :super_name %><br><br>
+    Super Power: <%= h.collection_select :heroine_powers, Power.all, :id, :name %><br><br>
+    <%= h.submit %>
+<% end %>
